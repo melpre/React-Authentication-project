@@ -54,7 +54,7 @@ export default class Data {
   // JSON object containing user credentials.
   // To authenticate user using credentials, set requiresAuth param to 'true' and credentials to
   // properties 'username' and 'password' from credentials object.
-  async getUser() {
+  async getUser(username, password) {
     const response = await this.api('/users', 'GET', null, true, { username, password });
     if (response.status === 200) {
       return response.json().then(data => data);
